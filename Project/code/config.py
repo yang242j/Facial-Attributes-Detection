@@ -1,20 +1,20 @@
-# IMPORT OS
+# IMPORT
 import os
 
 # Define the file path
-DATASET_PATH = 'celeba_dataset'
+DATASET_PATH = '../celeba_dataset'
 ATTR_PATH = os.path.sep.join([DATASET_PATH, 'list_attr_celeba.csv'])
 BBOX_PATH = os.path.sep.join([DATASET_PATH, 'list_bbox_celeba.csv'])
 PART_PATH = os.path.sep.join([DATASET_PATH, 'list_eval_partition.csv'])
 LAND_PATH = os.path.sep.join([DATASET_PATH, 'list_landmarks_align_celeba.csv'])
-IMAGES_PATH = os.path.sep.join([DATASET_PATH, 'img_align_celeba/img_align_celeba/'])
+ALIGN_IMAGES_PATH = os.path.sep.join([DATASET_PATH, 'img_align_celeba/img_align_celeba/'])
 WILD_IMAGES_PATH = os.path.sep.join([DATASET_PATH, 'in_the_wild_celeba/in_the_wild_celeba/'])
 
 # Define the output directory
 BASE_OUTPUT = "output"
-# MODEL_PATH = os.path.sep.join([BASE_OUTPUT, 'vgg19_dense.h5'])
 BBOX_MODEL_PATH = os.path.sep.join([BASE_OUTPUT, 'bbox_model.h5'])
 LANDMARK_MOEL_PATH = os.path.sep.join([BASE_OUTPUT, 'landmark_model.h5'])
+ATTR_MODEL_PATH = os.path.sep.join([BASE_OUTPUT, 'attr_model.h5'])
 PLOT_PATH = os.path.sep.join([BASE_OUTPUT, 'plot.png'])
 
 # Define the prepared directory
@@ -25,6 +25,13 @@ TEST_FILENAMES = os.path.sep.join([READY_DATA, 'test_img_filenameList.txt'])
 TRAIN_BBOX = os.path.sep.join([READY_DATA, 'train_img_bbox.txt'])
 VALID_BBOX = os.path.sep.join([READY_DATA, 'valid_img_bbox.txt'])
 TEST_BBOX = os.path.sep.join([READY_DATA, 'test_img_bbox.txt'])
+TRAIN_LANDMARK = os.path.sep.join([READY_DATA, 'train_img_landmark.txt'])
+VALID_LANDMARK = os.path.sep.join([READY_DATA, 'valid_img_landmark.txt'])
+TEST_LANDMARK = os.path.sep.join([READY_DATA, 'test_img_landmark.txt'])
+TRAIN_ATTR = os.path.sep.join([READY_DATA, 'train_img_attr.txt'])
+VALID_ATTR = os.path.sep.join([READY_DATA, 'valid_img_attr.txt'])
+TEST_ATTR = os.path.sep.join([READY_DATA, 'test_img_attr.txt'])
+ATTR_LIST = os.path.sep.join([READY_DATA, 'attr_list.txt'])
 
 # Define original image dimension
 IMG_WIDTH = 178.0
@@ -35,8 +42,8 @@ TAR_IMG_WIDTH = 224
 TAR_IMG_HEIGHT = 224
 
 # Define deep learning hyperparameters
-INIT_LR = 0.0001
-NUM_EPOCHS = 1
+INIT_LR = 0.00001
+NUM_EPOCHS = 100
 BATCH_SIZE = 32
 
 # Supress the tensorflow warning messages
@@ -47,11 +54,12 @@ BATCH_SIZE = 32
 #       3 = INFO, WARNING, and ERROR messages are not printed
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-# Define Universial Use Function
 # Print iterations progress
 def progressBar(iterable, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
     """
     Call in a loop to create terminal progress bar
+    @Author of this Function: Greenstick from stackoverflow
+    @URL: https://stackoverflow.com/a/34325723
     @params:
         iterable    - Required  : iterable object (Iterable)
         prefix      - Optional  : prefix string (Str)
