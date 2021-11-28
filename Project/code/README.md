@@ -174,7 +174,7 @@ python predict_bbox.py -I align_testimg.jpg
 python predict_bbox.py -I testIMG.txt
 
 # For the image from the database
-python predict_bbox.py -I ../celeba_dataset/img_align_celeba/img_align_celeba/159902.jpg
+python predict_bbox.py -I 000001.jpg
 ```
 
 ### Step 6: Predict Facial Landmarks Coordinates
@@ -187,7 +187,7 @@ python predict_landmark.py -I align_testimg.jpg
 python predict_landmark.py -I testIMG.txt
 
 # For the image from the database
-python predict_landmark.py -I ../celeba_dataset/img_align_celeba/img_align_celeba/159902.jpg
+python predict_landmark.py -I 000001.jpg
 ```
 
 ### Step 7: Predict Existance of Facial Attributes
@@ -200,5 +200,5 @@ python predict_attr.py -I align_testimg.jpg
 python predict_attr.py -I testIMG.txt
 
 # For the image from the database
-python predict_attr.py -I ../celeba_dataset/img_align_celeba/img_align_celeba/159902.jpg
+python predict_attr.py -I 000001.jpg
 ```

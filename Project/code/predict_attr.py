@@ -23,6 +23,7 @@ def get_img_pathlist(inputArg) -> list:
     img_path = []
     true_value_list = []
     df_attr = pd.read_csv(config.ATTR_PATH)
+    df_attr.replace(to_replace=-1, value=0, inplace=True)
     if (filetype == 'text/plain'): #test_img_list.txt
         print("Input .txt file")
         filenames = open(inputArg).read().strip().split('\n')
@@ -37,6 +38,8 @@ def get_img_pathlist(inputArg) -> list:
     else:# test_img.jpg
         align_full_path = config.os.path.sep.join([config.ALIGN_IMAGES_PATH, inputArg])
         img_path.append(align_full_path)
+        img_df = df_attr[df_attr['image_id'] == inputArg]
+        true_value_list.append(img_df.values.tolist()[0][1:])
     return img_path, true_value_list
 
 def preprocess_input(img_path):
@@ -78,7 +81,7 @@ def main() -> None:
             if true_value_list:
                 # Load true value of each input image, if exist
                 true_attr = true_value_list[index]
-                print(attribut_list[i], '->', ' Predict: ', "{:.0%}".format(pred_prob), ' Actual: ', true_attr[0][i])
+                print(attribut_list[i], '->', ' Predict: ', "{:.0%}".format(pred_prob), ' Actual: ', true_attr[i])
             else:
                 print(attribut_list[i], '->', ' Predict: ', "{:.0%}".format(pred_prob))
 
