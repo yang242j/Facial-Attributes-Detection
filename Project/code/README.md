@@ -30,7 +30,7 @@ File structure
 ### Step 1: File Path Configuration
 
 ```sh
-# Peak the config file
+# Peek the config file
 cat config.py
 ```
 
@@ -86,7 +86,7 @@ python data_prep.py
 ### Step 3: Build Model
 
 ```sh
-# Peak the model file
+# Peek the model file
 cat VGG19_Dense_model.py
 ```
 
