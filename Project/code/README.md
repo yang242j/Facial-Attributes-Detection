@@ -60,6 +60,8 @@ To save precious memory, extract and save data in advance.
 python data_prep.py
 ```
 
+![data_prep.gif](markdown_img/data_prep.gif)
+
 - Do training, validation, testing partition
 
 - Bounding box normalization and tranformation
@@ -135,13 +137,23 @@ cat VGG19_Dense_model.py
 ```sh
 # Training the bounding box model
 python train_bbox.py
+```
 
+![train_bbox.gif](markdown_img/train_bbox.gif)
+
+```sh
 # Training the facial landmark model
 python train_landmark.py
+```
 
+![train_landmark.gif](markdown_img/train_landmark.gif)
+
+```sh
 # Training the facial attributes model
 python train_attr.py
 ```
+
+![train_attr.gif](markdown_img/train_attr.gif)
 
 Bounding Box model:
 - 512 nodes in each hidden layer
@@ -177,6 +189,8 @@ python predict_bbox.py -I testIMG.txt
 python predict_bbox.py -I 000001.jpg
 ```
 
+![pred_bbox.gif](markdown_img/pred_bbox_align_testimg.gif)
+
 ### Step 6: Predict Facial Landmarks Coordinates
 
 ```sh
@@ -190,6 +204,8 @@ python predict_landmark.py -I testIMG.txt
 python predict_landmark.py -I 000001.jpg
 ```
 
+![pred_landmark.gif](markdown_img/pred_landmark_align_testimg.gif)
+
 ### Step 7: Predict Existance of Facial Attributes
 
 ```sh
@@ -202,3 +218,7 @@ python predict_attr.py -I testIMG.txt
 # For the image from the database
 python predict_attr.py -I 000001.jpg
 ```
+
+![pred_attr.gif](markdown_img/pred_attr_align_testimg.gif)
+
+![pred_attr_123456.gif](markdown_img/pred_attr_123456.gif)
