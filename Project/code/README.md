@@ -1,6 +1,6 @@
 # Deep Learning on Facial Attributes Prediction using Transfer Learning with VGG19 model
 
-## [Project report in NIPs 2018 format](https://github.com/yang242j/DeepLearning/blob/master/Project/doc/Deep%20Learning%20on%20Facial%20Attributes%20Detection%20using%20Transfer%20Learning%20with%20VGG19%20model.pdf)
+## [Project report in NeurIPs 2018 format](https://github.com/yang242j/DeepLearning/blob/master/Project/doc/Deep%20Learning%20on%20Facial%20Attributes%20Detection%20using%20Transfer%20Learning%20with%20VGG19%20model.pdf)
 
 
 ## Demo Steps
